@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-exo), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --color-void: #04060d;
+  --color-panel: #0b1124;
+  --color-panel-2: #131c38;
+  --color-line: #2d3f75;
+  --color-ink: #f3f7ff;
+  --color-mute: #b9c7e6;
+  --color-neon: #4df0ff;
+  --color-volt: #c8ff3d;
+  --color-pulse: #ff5cd6;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-exo), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.7;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(77, 240, 255, 0.16), transparent),
+    radial-gradient(700px 500px at -10% 35%, rgba(255, 92, 214, 0.1), transparent),
+    var(--color-void);
+}
+
+/* Sudut terpotong ala panel instrumen */
+.chamfer {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+.chamfer-sm {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.latar-grid {
+  background-image:
+    linear-gradient(rgba(77, 240, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 240, 255, 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.cahaya-neon {
+  text-shadow: 0 0 22px rgba(77, 240, 255, 0.5);
+}
+
+@keyframes alir {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+.jejak {
+  stroke-dasharray: 14 10;
+  animation: alir 7s linear infinite;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-volt);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
