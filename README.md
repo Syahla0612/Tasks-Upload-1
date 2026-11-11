@@ -2,7 +2,7 @@
 
 Next.js (App Router) + Tailwind CSS v4 + Neon Postgres + Vercel Blob, di-hosting di Vercel.
 
-## Langkah deploy dari nol
+## Langka deploy dari nol
 
 1. **Buat repo GitHub**: github.com → tombol "+" → New repository → beri nama (mis. `portofolio-tugas`) → Create.
 2. **Unggah file**: ekstrak zip, di repo klik "uploading an existing file", lalu seret SEMUA isi folder (bukan folder induknya) → Commit changes. Pastikan `.gitignore` dan `.env.example` ikut terunggah dan folder `src` tetap utuh.
